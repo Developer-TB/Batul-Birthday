@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>For Batuliiii ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --pink: #dc528a;
+      --deep: #9f315f;
+      --light: #fff3f8
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: #743650;
+      font-family: 'DM Sans', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #ffd5e7, transparent 35%), radial-gradient(circle at 90% 60%, #ffcae0, transparent 40%), #fff6fa;
+      overflow-x: hidden
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    h1,
+    h2,
+    .script {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400
+    }
+
+    h1 {
+      font-size: clamp(4.6rem, 12vw, 9rem);
+      line-height: .95;
+      margin: 22px 0;
+      color: var(--deep)
+    }
+
+    h2 {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      margin: 0 0 16px;
+      color: var(--deep)
+    }
+
+    p {
+      line-height: 1.85
+    }
+
+    .wrap {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 22px
+    }
+
+    .section {
+      padding: 100px 0;
+      min-height: 70vh;
+      display: flex;
+      align-items: center
+    }
+
+    .center {
+      text-align: center
+    }
+
+    .eyebrow {
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--pink);
+      font-weight: 700
+    }
+
+    .card {
+      background: #ffffffa8;
+      border: 1px solid white;
+      box-shadow: 0 18px 60px #b9437821;
+      border-radius: 28px;
+      padding: clamp(24px, 5vw, 52px);
+      backdrop-filter: blur(14px)
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 40px;
+      padding: 15px 28px;
+      background: linear-gradient(120deg, #ed78a8, #c43c79);
+      color: white;
+      box-shadow: 0 12px 25px #d64c8540;
+      font-weight: 700;
+      transition: transform .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-3px)
+    }
+
+    .btn:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #a83269;
+      outline-offset: 4px
+    }
+
+    .outline {
+      background: white;
+      color: var(--deep)
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      background: linear-gradient(140deg, #fba6c8, #d9538c, #ad3e77);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      transition: opacity .7s, visibility .7s
+    }
+
+    .intro.closed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    .intro .card {
+      max-width: 600px;
+      text-align: center;
+      background: #ffffff24;
+      color: white
+    }
+
+    .intro h2 {
+      color: white
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin: 20px auto
+    }
+
+    .ribbon {
+      font-size: 4rem;
+      display: block;
+      animation: bob 3s ease-in-out infinite
+    }
+
+    .glow {
+      color: var(--pink)
+    }
+
+    .twocol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center
+    }
+
+    .chat {
+      max-width: 360px;
+      margin: auto;
+      border: 9px solid #4d2b3c;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #fff6fa;
+      box-shadow: 0 20px 45px #9f315f30
+    }
+
+    .chathead {
+      background: #d64d87;
+      color: white;
+      padding: 18px;
+      font-weight: 700
+    }
+
+    .bubble {
+      padding: 12px 15px;
+      border-radius: 18px;
+      margin: 18px;
+      max-width: 80%;
+      background: white;
+      font-size: .9rem
+    }
+
+    .bubble.mine {
+      margin-left: auto;
+      background: #ffc6dd
+    }
+
+    .small {
+      font-size: .78rem;
+      color: #a06c83
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .photo {
+      background: white;
+      padding: 12px 12px 25px;
+      border-radius: 8px;
+      box-shadow: 0 16px 40px #9f315f24;
+      transform: rotate(-2deg)
+    }
+
+    .photo:nth-child(2) {
+      transform: rotate(2deg)
+    }
+
+    .photo:nth-child(3) {
+      transform: rotate(-1deg)
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      background: #ffbfd9
+    }
+
+    .photo figcaption {
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 12px
+    }
+
+    .game {
+      position: relative;
+      height: 340px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 90%, #ffe9f2, #ffbcd7);
+      border: 3px solid white;
+      touch-action: manipulation
+    }
+
+    .target {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      border: 0;
+      background: none;
+      font-size: clamp(38px, 6vw, 55px);
+      filter: drop-shadow(0 6px 6px #9f315f30);
+      animation: bob 2s ease-in-out infinite
+    }
+
+    .target.hit {
+      animation: pop .3s forwards
+    }
+
+    .bow {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 55px;
+      pointer-events: none
+    }
+
+    .arrow {
+      position: absolute;
+      font-size: 32px;
+      bottom: 42px;
+      left: 50%;
+      z-index: 2;
+      transition: transform .35s ease-out, opacity .35s;
+      pointer-events: none
+    }
+
+    .score {
+      font-weight: 700;
+      color: var(--deep);
+      font-size: 1.1rem
+    }
+
+    .pickup {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      color: var(--deep);
+      font-weight: 700;
+      min-height: 95px;
+      display: grid;
+      place-items: center
+    }
+
+    .gift {
+      font-size: 100px;
+      background: none;
+      border: 0;
+      animation: bob 2.5s infinite
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .letter {
+      max-width: 760px;
+      margin: auto
+    }
+
+    .letter details {
+      margin-top: 22px
+    }
+
+    .letter summary {
+      list-style: none;
+      cursor: pointer
+    }
+
+    .letter summary::-webkit-details-marker {
+      display: none
+    }
+
+    .letter-content {
+      margin-top: 24px;
+      text-align: left;
+      border-top: 1px solid #edbad0;
+      padding-top: 20px
+    }
+
+    .footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--deep)
+    }
+
+    .music {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 15;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 8px 24px #9f315f55
+    }
+
+    .floatheart {
+      position: fixed;
+      bottom: -40px;
+      z-index: 2;
+      pointer-events: none;
+      animation: rise 8s linear forwards
+    }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      pointer-events: none;
+      z-index: 20;
+      animation: fall 3s linear forwards
+    }
+
+    @keyframes bob {
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    @keyframes pop {
+      to {
+        transform: scale(1.8);
+        opacity: 0
+      }
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(-110vh) rotate(200deg);
+        opacity: 0
+      }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg)
+      }
+    }
+
+    @media(max-width:720px) {
+      .twocol {
+        grid-template-columns: 1fr
+      }
+
+      .photos {
+        grid-template-columns: 1fr;
+        max-width: 390px;
+        margin: auto
+      }
+
+      .section {
+        padding: 65px 0
+      }
+
+      .game {
+        height: 310px
+      }
+
+      .intro .card {
+        padding: 30px 20px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *:before,
+      *:after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important
+      }
+    }
+
+    /* 21 → 22 birthday transformation */
+    .age-section {
+      min-height: 92vh;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 45%, #ffd3e5 0%, #fff2f8 55%, #fff9fc 100%);
+      text-align: center;
+      position: relative
+    }
+
+    .age-wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: auto;
+      padding: 50px 16px
+    }
+
+    .age-kicker {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ba4d7c;
+      font-weight: 700
+    }
+
+    .age-heading {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(48px, 9vw, 90px);
+      color: #b32d67;
+      margin: 15px 0 5px;
+      font-weight: 400
+    }
+
+    .age-sub {
+      color: #965875;
+      line-height: 1.8;
+      margin: 0 auto 25px;
+      max-width: 550px
+    }
+
+    .age-stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(8px, 4vw, 45px);
+      margin: 18px auto 30px;
+      min-height: 220px;
+      position: relative
+    }
+
+    .age-number {
+      font-weight: 700;
+      font-size: clamp(90px, 22vw, 190px);
+      line-height: 1;
+      letter-spacing: -.08em;
+      color: #cf568c;
+      text-shadow: 0 12px 0 #ffbdd7, 0 25px 50px #db79a455;
+      transition: transform .8s, opacity .65s, filter .8s;
+      display: inline-block
+    }
+
+    .age-number.old {
+      filter: grayscale(.15)
+    }
+
+    .age-arrow {
+      font-size: clamp(30px, 6vw, 60px);
+      color: #e880a7;
+      animation: agePulse 1.6s infinite
+    }
+
+    .age-number.new {
+      opacity: .28;
+      transform: scale(.7);
+      filter: blur(4px)
+    }
+
+    .age-section.transformed .age-number.old {
+      opacity: 0;
+      transform: translateX(-80px) rotate(-20deg) scale(.35);
+      filter: blur(10px)
+    }
+
+    .age-section.transformed .age-number.new {
+      opacity: 1;
+      transform: scale(1.17) rotate(-5deg);
+      filter: none;
+      color: #eb4084;
+      animation: agePop 1s both
+    }
+
+    .age-section.transformed .age-arrow {
+      opacity: 0
+    }
+
+    .age-spark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 26px;
+      pointer-events: none;
+      animation: ageSpark 1.5s ease-out forwards;
+      z-index: 10
+    }
+
+    .age-reveal {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: max-height .8s, opacity .8s, transform .8s
+    }
+
+    .age-section.transformed .age-reveal {
+      max-height: 350px;
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .age-reveal h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(40px, 7vw, 64px);
+      font-weight: 400;
+      color: #b42f6d
+    }
+
+    .age-reveal p {
+      line-height: 1.8;
+      color: #80536b
+    }
+
+    .age-launch {
+      font: 700 15px 'DM Sans', sans-serif;
+      border: 0;
+      background: linear-gradient(120deg, #e55c96, #b72e69);
+      color: white;
+      border-radius: 100px;
+      padding: 17px 30px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px #d4558950;
+      transition: transform .2s
+    }
+
+    .age-launch:hover {
+      transform: translateY(-3px)
+    }
+
+    .age-launch:focus-visible {
+      outline: 3px solid #9c2358;
+      outline-offset: 4px
+    }
+
+    .age-section.transformed .age-launch {
+      background: #fff;
+      color: #b32d67;
+      border: 1px solid #e8a6c0
+    }
+
+    @keyframes agePulse {
+      50% {
+        transform: translateX(7px)
+      }
+    }
+
+    @keyframes agePop {
+      0% {
+        transform: scale(.3) rotate(30deg)
+      }
+
+      60% {
+        transform: scale(1.35) rotate(-10deg)
+      }
+
+      100% {
+        transform: scale(1.17) rotate(-5deg)
+      }
+    }
+
+    @keyframes ageSpark {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(.3)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) rotate(420deg) scale(1.5)
+      }
+    }
+
+    @media(max-width:500px) {
+      .age-stage {
+        min-height: 150px
+      }
+
+      .age-wrap {
+        padding: 55px 12px
+      }
+
+      .age-number {
+        font-size: clamp(75px, 23vw, 125px)
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .age-number,
+      .age-arrow,
+      .age-spark,
+      .age-reveal {
+        animation: none !important;
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="intro" id="intro">
+    <div class="card"><span class="ribbon">🎀</span>
+      <div class="eyebrow" style="color:white">a little magic, just for you</div>
+      <h2>For Batuliiii</h2>
+      <p>One birthday wish started our story. Today, I made a little world just for you. 💌</p><button
+        class="btn outline" id="enter">Open your surprise ♡</button>
+    </div>
+  </div><button class="music" id="musicBtn" aria-label="Toggle background music">♫</button><audio id="song"
+    src="song.mp3" loop></audio>
+  <main>
+    <section class="hero">
+      <div><span class="ribbon">🎀</span>
+        <div class="eyebrow">to the girl who makes my world prettier</div>
+        <h1>Happy Birthday<br><span class="glow">Batuliiii ♡</span></h1>
+        <p>Somewhere between a simple birthday wish and a thousand little conversations, you became my favorite part of
+          the story.</p>
+        <p class="small">03 • 11 • 2004</p><a class="btn" href="#story"
+          style="display:inline-block;text-decoration:none;margin-top:16px">Follow our story ↓</a>
+      </div>
+    </section>
+    <section class="age-section" id="age22" aria-labelledby="ageTitle">
+      <div class="age-wrap">
+        <div class="age-kicker">✨ a new chapter begins ✨</div>
+        <h2 class="age-heading" id="ageTitle">Goodbye 21, Hello 22!</h2>
+        <p class="age-sub">One little birthday wish brought us together in 2025… and now it's time for your most magical
+          chapter yet, Batuliiii. 🎀</p>
+        <div class="age-stage" aria-label="Turning 21 into 22"><span class="age-number old">21</span><span
+            class="age-arrow" aria-hidden="true">➜</span><span class="age-number new">22</span></div><button
+          class="age-launch" id="ageLaunch" type="button">🎀 Turn 21 into 22 ✨</button>
+        <div class="age-reveal" id="ageReveal" aria-live="polite">
+          <h3>Chapter 22: The Batuliiii Era 💖</h3>
+          <p>22 looks beautiful on you! More wishes, more laughter, more adventures… and a million reasons to smile.
+            You're not getting older, you're getting even more magical. 🥹💗</p>
+          <p style="margin-top:12px">✨ Level 22 unlocked • Main character energy activated ✨</p>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="story">
+      <div class="wrap twocol">
+        <div>
+          <div class="eyebrow">chapter one · 2025</div>
+          <h2>It began with a wish</h2>
+          <p>In 2025, I wished you a happy birthday. I had no idea that one little message would become the beginning of
+            our conversations, our laughter, and so many memories.</p>
+          <p>I'd send that message a thousand times again, because every version of that moment leads me to you. 💗</p>
+          <p class="small">The chat shown here is a romantic illustration, not our actual messages.</p>
+        </div>
+        <div class="chat">
+          <div class="chathead">♡ Batuliiii</div>
+          <div class="small center" style="margin:15px">Our first birthday conversation · 2025</div>
+          <div class="bubble mine">Happy Birthday, Batul! 🎂💗</div>
+          <div class="bubble">A birthday wish that started everything... ✨</div>
+          <div class="bubble mine">And the best part? Our story was only beginning. ♡</div>
+          <div style="text-align:center;font-size:65px;padding:28px">💌</div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="memories">
+      <div class="wrap center">
+        <div class="eyebrow">little moments, big feelings</div>
+        <h2>Our memories</h2>
+        <p>Add your favorite three photos to turn this into your own love story.</p>
+        <div class="photos">
+          <figure class="photo"><img src="photo1.jpg" alt="Our first favorite memory"
+              onerror="this.style.display='none';this.parentElement.querySelector('.fallback').hidden=false">
+            <div class="fallback" hidden style="padding:100px 10px;background:#ffd4e5">📸 Add photo1.jpg</div>
+            <figcaption>Our little moments ♡</figcaption>
+          </figure>
+          <figure class="photo"><img src="photo2.jpg" alt="A lovely moment together"
+              onerror="this.style.display='none';this.parentElement.querySelector('.fallback').hidden=false">
+            <div class="fallback" hidden style="padding:100px 10px;background:#ffd4e5">💗 Add photo2.jpg</div>
+            <figcaption>My favorite smile</figcaption>
+          </figure>
+          <figure class="photo"><img src="photo3.jpg" alt="A memory to treasure"
+              onerror="this.style.display='none';this.parentElement.querySelector('.fallback').hidden=false">
+            <div class="fallback" hidden style="padding:100px 10px;background:#ffd4e5">🌷 Add photo3.jpg</div>
+            <figcaption>Forever a favorite</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="anniversary">
+      <div class="wrap">
+        <div class="card center">
+          <div class="eyebrow">one lovely chapter</div>
+          <h2>Our first anniversary ♡</h2>
+          <p>From that first birthday wish to our first anniversary, we've collected stories, smiles, and countless
+            little reasons to be grateful for each other. Here's to all the pages we haven't written yet.</p>
+          <div style="font-size:60px">💞</div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="game">
+      <div class="wrap center">
+        <div class="eyebrow">a little game of love</div>
+        <h2>Cupid's Heart Hunt 🏹</h2>
+        <p>Tap the floating hearts to shoot Cupid's arrows! Every hit unlocks a new pickup line. Hit 5 hearts to win a
+          secret surprise.</p>
+        <div class="card" style="padding:20px">
+          <p class="score">Hearts hit: <span id="score">0</span> / 5</p>
+          <div class="game" id="arena" aria-label="Cupid game area">
+            <div class="bow">🏹</div>
+          </div>
+          <div class="pickup" id="line" aria-live="polite">Ready, my love? Aim for a heart! 💘</div><button class="btn"
+            id="reset">Play again ↻</button>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="gift">
+      <div class="wrap center">
+        <div class="eyebrow">something just for you</div>
+        <h2>A secret gift</h2>
+        <p>Tap the present to unwrap a surprise pickup line.</p><button class="gift" id="giftBtn"
+          aria-label="Open mystery gift">🎁</button>
+        <div class="card" id="giftText" style="max-width:620px;margin:25px auto" aria-live="polite">A tiny gift with a
+          big feeling inside... ♡</div>
+      </div>
+    </section>
+    <section class="section" id="letter">
+      <div class="wrap center">
+        <div class="eyebrow">words from my heart</div>
+        <h2>A letter for Batuliiii</h2>
+        <div class="card letter"><span style="font-size:65px">💌</span>
+          <p>There's something I want you to read...</p>
+          <details>
+            <summary class="btn">Open my love letter ♡</summary>
+            <div class="letter-content">
+              <p>My Batuliiii,</p>
+              <p>Happy Birthday to the girl who turned an ordinary day into the start of an extraordinary story. When I
+                wished you happy birthday in 2025, I never imagined how much that one little message would come to mean
+                to me.</p>
+              <p>Every laugh, every silly conversation, every sweet little moment with you has made this journey
+                beautiful. I hope this birthday brings you peace, adventure, a thousand reasons to smile, and every
+                beautiful thing your heart is wishing for.</p>
+              <p>If I could return to the beginning, I'd choose that first birthday message all over again. Because it
+                led me to you.</p>
+              <p class="script" style="font-size:2.3rem;color:var(--deep)">Forever yours, ♡</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="final">
+      <div class="wrap center">
+        <div class="eyebrow">one last wish</div>
+        <h2>Make a birthday wish ✨</h2>
+        <p>Close your eyes, make a wish, and tap the cake.</p><button id="cake"
+          style="font-size:115px;background:none;border:0" aria-label="Make birthday wish">🎂</button>
+        <div id="wishText" class="card hidden" style="max-width:720px;margin:30px auto">
+          <h2>Happy Birthday, Batuliiii! 💗</h2>
+          <p>May every beautiful wish come true. And may our story keep growing, one lovely moment at a time. ♡</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">Made with endless love, just for Batuliiii 🎀</footer>
+  <script>const $ = s => document.querySelector(s), intro = $('#intro'), song = $('#song'), musicBtn = $('#musicBtn'); $('#enter').onclick = () => { intro.classList.add('closed'); song.play().then(() => musicBtn.textContent = 'Ⅱ').catch(() => musicBtn.textContent = '♫'); burst(40) }; musicBtn.onclick = () => { if (song.paused) { song.play().then(() => musicBtn.textContent = 'Ⅱ').catch(() => { }) } else { song.pause(); musicBtn.textContent = '♫' } }; const lines = ['Are you a magician? Because every time I see you, the world disappears. ✨', 'If kisses were stars, I’d give you the whole sky. 🌌', 'Are you made of sunshine? Because you brighten every little moment. ☀️', 'I didn’t believe in perfect timing until my birthday wish found you. 💌', 'If I had one wish, I’d choose another thousand memories with you. 💗', 'You must be my favorite song, because you’re always on my mind. 🎶', 'Do you have a map? I keep getting lost in your smile. 🌷', 'Are you a shooting star? Because you make every wish feel possible. ⭐']; let score = 0, targets = [], lastLine = -1; function randomLine() { let n; do { n = Math.floor(Math.random() * lines.length) } while (n === lastLine && lines.length > 1); lastLine = n; return lines[n] } function spawn() { const arena = $('#arena'); arena.querySelectorAll('.target,.arrow').forEach(x => x.remove()); targets = []; for (let i = 0; i < 4; i++) { const b = document.createElement('button'); b.className = 'target'; b.textContent = ['💗', '💖', '💘', '💕'][i]; b.setAttribute('aria-label', 'Shoot heart ' + (i + 1)); b.style.setProperty('--x', (8 + Math.random() * 70) + '%'); b.style.setProperty('--y', (8 + Math.random() * 54) + '%'); b.onclick = () => hit(b); arena.appendChild(b); targets.push(b) } } function hit(b) { if (b.disabled || score >= 5) return; b.disabled = true; const arena = $('#arena'), a = document.createElement('div'); a.className = 'arrow'; a.textContent = '➶'; arena.appendChild(a); const ar = arena.getBoundingClientRect(), r = b.getBoundingClientRect(), dx = r.left + r.width / 2 - ar.left - ar.width / 2, dy = r.top + r.height / 2 - ar.top - ar.height + 45; a.style.transform = `translate(${dx}px,${dy}px) rotate(-35deg)`; a.style.opacity = '0'; b.classList.add('hit'); score++; $('#score').textContent = score; $('#line').textContent = score === 5 ? 'YOU WON! 💝 You stole Cupid’s heart... and mine too!' : randomLine(); if (score === 5) { burst(110); setTimeout(() => { document.querySelector('#gift').scrollIntoView({ behavior: 'smooth' }) }, 1700) } else setTimeout(spawn, 380) } $('#reset').onclick = () => { score = 0; $('#score').textContent = '0'; $('#line').textContent = 'Ready, my love? Aim for a heart! 💘'; spawn() }; spawn(); let giftCount = 0; $('#giftBtn').onclick = () => { giftCount++; $('#giftBtn').textContent = giftCount % 2 ? '💝' : '🎁'; $('#giftText').textContent = randomLine(); burst(25) }; $('#cake').onclick = () => { $('#wishText').classList.remove('hidden'); burst(160); $('#wishText').scrollIntoView({ behavior: 'smooth', block: 'center' }) }; function burst(n) { for (let i = 0; i < n; i++) { const c = document.createElement('span'); c.className = 'confetti'; c.style.left = Math.random() * 100 + 'vw'; c.style.background = ['#e85991', '#ffc2da', '#ffdf74', '#fff', '#bd4a7d'][Math.floor(Math.random() * 5)]; c.style.animationDelay = Math.random() * .6 + 's'; document.body.appendChild(c); setTimeout(() => c.remove(), 4000) } } if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { setInterval(() => { if (document.hidden) return; const h = document.createElement('span'); h.className = 'floatheart'; h.textContent = ['♡', '💕', '🌸', '✨'][Math.floor(Math.random() * 4)]; h.style.left = Math.random() * 100 + 'vw'; h.style.fontSize = (14 + Math.random() * 20) + 'px'; document.body.appendChild(h); setTimeout(() => h.remove(), 8500) }, 1000) }
+    // Interactive 21 → 22 birthday moment
+    const ageLaunch = document.getElementById('ageLaunch');
+    const ageSection = document.getElementById('age22');
+    ageLaunch.addEventListener('click', () => {
+      const firstTime = !ageSection.classList.contains('transformed');
+      ageSection.classList.add('transformed');
+      ageLaunch.textContent = '💗 Make the magic happen again';
+      if (typeof burst === 'function') burst(100);
+      for (let i = 0; i < 42; i++) {
+        const spark = document.createElement('span'); spark.className = 'age-spark';
+        spark.textContent = ['💖', '✨', '🎀', '🌸', '💕', '⭐'][Math.floor(Math.random() * 6)];
+        const angle = Math.random() * Math.PI * 2, distance = 80 + Math.random() * Math.min(innerWidth * .42, 350);
+        spark.style.setProperty('--dx', Math.cos(angle) * distance + 'px');
+        spark.style.setProperty('--dy', Math.sin(angle) * distance + 'px');
+        spark.style.animationDelay = Math.random() * .3 + 's';
+        ageSection.appendChild(spark); setTimeout(() => spark.remove(), 1900);
+      }
+      if (!firstTime) { const number = ageSection.querySelector('.age-number.new'); number.style.animation = 'none'; void number.offsetWidth; number.style.animation = 'agePop 1s both'; }
+    });
+  </script>
+</body>
+
+</html>
